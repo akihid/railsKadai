@@ -1,5 +1,5 @@
 <div class="container">
-  <header class="header clearfix">
+  <header class="header">
     <%= link_to image_tag('logo.png'), toris_path ,class:"logo_image"%>
   </header>
   
@@ -8,20 +8,20 @@
     <%= form_with(model:@post , local: true ,url: toris_path, class:"tweet_form") do |form| %>
       <%= form.hidden_field :content %>
       
-        <span><%= @post.content %></span>
+      <span><%= @post.content %></span>
       <div class="buttons">
-      <div class="button-part">
-        <%= form.submit  "送信" ,class:"tweet-button"%>
-      </div>
-  <% end %>
+        <div class="button-part">
+          <%= form.submit  "送信" ,class:"tweet-button"%>
+        </div>
+    <% end %>
   
-  <%= form_with(model:@post , local: true , url: toris_path ,method: 'get') do |form| %>
-    <%= form.hidden_field :content %>
-    <div class="button-part">
-      <%= form.submit  "戻る" ,name: 'back',class:"tweet-buttom"%>
-    </div>
-    </div>
-  <% end %>
+    <%= form_with(model:@post , local: true , url: toris_path ,method: 'get') do |form| %>
+      <%= form.hidden_field :content %>
+      <div class="button-part">
+        <%= form.submit  "戻る" ,name: 'back',class:"tweet-buttom"%>
+      </div>
+      </div>
+    <% end %>
   </div>
 
   <footer class="footer">
