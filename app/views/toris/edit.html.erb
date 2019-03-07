@@ -5,5 +5,10 @@
     <%= form.label :content %>
     <%= form.text_field :content %>
   </div>
-  <%= form.submit %>
+  <%= form.submit "つぶやく" %>
+<% end %>
+
+<%= form_with(model:@post , local: true , url: toris_path ,method: 'get') do |form| %>
+  <%= form.hidden_field :content %>
+  <%= form.submit  "戻る" ,name: 'back' %>
 <% end %>
