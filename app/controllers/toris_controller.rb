@@ -4,7 +4,12 @@ class TorisController < ApplicationController
   
   def index
     @posts = Post.all
-    @post = Post.new
+    if params[:back]
+      @post = Post.new(set_param)
+    else
+      @post = Post.new
+    end
+    
   end
   
   def create
@@ -17,7 +22,13 @@ class TorisController < ApplicationController
   end
   
   def confirm
+    binding.pry
     @post = Post.new(set_param)
+    
+    if @post.invalid?
+      @posts = Post.all
+      render :index
+    end
   end
   
   def edit

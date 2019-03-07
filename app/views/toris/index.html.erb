@@ -1,23 +1,13 @@
 <h1>一覧画面</h1>
 
-<!--エラー表示-->
-  <% if @post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= @post.errors.count %>件のエラーがあります。</h2>
-      <ul>
-
-      <% @post.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-    
 <!--つぶやく場所-->
 <%= form_with(model: @post, local: true , url: confirm_toris_path ) do |form| %>
+  
+  <%= render partial: "check_error" %>
+  
   <div class="post_content">
     <%= form.label :content %>
-    <%= form.text_field :content %>
+    <%= form.text_field :content%>
   </div>
   <%= form.submit "つぶやく"%>
 <% end %>

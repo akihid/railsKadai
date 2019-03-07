@@ -1,6 +1,9 @@
 <h1>編集画面</h1>
 
 <%= form_with(model: @post, local: true , url: tori_path ) do |form| %>
+
+ <%= render partial: "check_error" %>
+ 
   <div class="post_content">
     <%= form.label :content %>
     <%= form.text_field :content %>
