@@ -1,4 +1,7 @@
 class TorisController < ApplicationController
+  
+  before_action :set_post , only:[:edit , :update]
+  
   def index
     @posts = Post.all
     @post = Post.new
@@ -17,11 +20,23 @@ class TorisController < ApplicationController
     @post = Post.new(set_param)
   end
   
+  def edit
+  end
   
-  
+  def update
+    if @post.update(set_param)
+      redirect_to toris_path , notice:'編集完了'
+    else
+      render 'edit'
+    end
+  end
   private
   
   def set_param
     params.require(:post).permit(:content)
+  end
+  
+  def set_post
+    @post = Post.find(params[:id])
   end
 end
