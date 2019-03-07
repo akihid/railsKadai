@@ -1,6 +1,6 @@
 class TorisController < ApplicationController
   
-  before_action :set_post , only:[:edit , :update]
+  before_action :set_post , only:[:edit , :update , :destroy]
   
   def index
     @posts = Post.all
@@ -30,6 +30,13 @@ class TorisController < ApplicationController
       render 'edit'
     end
   end
+  
+  def destroy
+    @post.destroy
+    redirect_to toris_path , notice:'削除完了'
+  end
+
+
   private
   
   def set_param
