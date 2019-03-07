@@ -1,7 +1,111 @@
-.post_list{
-  margin:0 auto;
+html{
+  font-size:62.5%;
+  height: 100%;
+}
+body{
+  height: 100%;
 }
 
-.indextable{
-   margin:0 auto;
+.container{
+  width: 980px;
+  margin:0 auto;
+  min-height: 100%;
+  position: relative;
+  text-align: center;
+}
+
+.header{
+ background: #333;
+ height: 50px;
+}
+.logo_image img{
+  width:110px; 
+  margin:0 auto;
+  float: left;
+}
+
+input[type="submit"]{
+  background: #655D60;
+  padding: 5px 10px;
+  color: white;
+}
+
+.tweet-area{
+  background:  rgb(246, 246, 246);
+  height:140px;
+  padding: 1rem;
+  border: 1px solid #eee;
+}
+
+.error_explanation{
+  color: red;
+  
+}
+
+.error_explanation li{
+  list-style: none;
+}
+
+.tweet_form{
+  width:100%;
+}
+
+.tweet-text{
+  width:80%;
+}
+
+.post_content{
+  width: 100%;
+  padding: 1rem;
+}
+
+.tweet-list{
+  display: flex;
+  background:  rgb(246, 246, 246);
+  height:300px;
+  padding: 1rem;
+  border: 1px solid #eee;
+  overflow:hidden;
+}
+
+.tweet-main {
+  width: 100%;
+  overflow: auto;
+}
+
+.tweet-buttoms {
+  text-align: right;
+  border-bottom: 1px solid #eee;
+}
+
+.tweett-buttom:not(:last-child) {
+  margin-right: 0.5rem;
+}
+
+.buttons{
+  padding-top: 2%;
+  display: table;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.button-part{
+  display: table-cell;
+}
+
+.footer{
+  background: #333;
+  height: 30px;
+  width:100%;
+  position: absolute;
+  bottom:0;
+  display: table;
+}
+
+.footer p{
+  font-size:1rem;
+  color:#fff;
+  text-align: center;
+  vertical-align: middle;
+  display: table-cell;
 }

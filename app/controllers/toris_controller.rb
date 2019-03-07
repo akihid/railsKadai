@@ -9,20 +9,18 @@ class TorisController < ApplicationController
     else
       @post = Post.new
     end
-    
   end
   
   def create
     @post = Post.new(set_param)
     if @post.save
-      redirect_to toris_path , notice:'新規登録完了'
+      redirect_to toris_path
     else
       render 'confirm'
     end
   end
   
   def confirm
-    binding.pry
     @post = Post.new(set_param)
     
     if @post.invalid?
@@ -36,7 +34,7 @@ class TorisController < ApplicationController
   
   def update
     if @post.update(set_param)
-      redirect_to toris_path , notice:'編集完了'
+      redirect_to toris_path
     else
       render 'edit'
     end
@@ -44,7 +42,7 @@ class TorisController < ApplicationController
   
   def destroy
     @post.destroy
-    redirect_to toris_path , notice:'削除完了'
+    redirect_to toris_path
   end
 
 

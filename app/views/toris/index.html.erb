@@ -1,31 +1,36 @@
-<h1>一覧画面</h1>
-
-<!--つぶやく場所-->
-<%= form_with(model: @post, local: true , url: confirm_toris_path ) do |form| %>
+<div class="container">
+  <header class="header clearfix">
+    <%= link_to image_tag('logo.png'), toris_path ,class:"logo_image"%>
+  </header>
+  <h1>今の気持ちをつぶやこう</h1>
   
-  <%= render partial: "check_error" %>
+  <div class="tweet-area">
+    <%= form_with(model: @post, local: true , url: confirm_toris_path, class:"tweet_form") do |form| %>
+      <%= render partial: "check_error" %>
   
-  <div class="post_content">
-    <%= form.label :content %>
-    <%= form.text_field :content%>
-  </div>
-  <%= form.submit "つぶやく"%>
-<% end %>
-
-<!--一覧表示-->
-<article id="post_list">
-  <table id="index_table">
-    <tr>
-      <th>内容</th>
-      <th>編集</th>
-      <th>削除</th>
-    </tr>
+      <div class="post_content">
+        <!--<%= form.label :content %>-->
+        <%= form.text_field :content , class:"tweet-text"%>
+      </div>
       
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.content %></td>
-        <td><%= link_to '■' , edit_tori_path(post.id) %></td>
-        <td><%= link_to '■' , tori_path(post.id), method: :delete , data:{confirm:'削除しますがよろしいですか'}%> </td>
+      <%= form.submit "送信"%>
     <% end %>
-  </table>   
-</article>
+  </div>
+    
+  <h1>過去のつぶやき</h1>
+  <div class="tweet-list">
+    <div class="tweet-main">
+      <% @posts.each do |post| %>
+        <p><%= post.content %></p>
+        <div class="tweet-buttoms">
+          <%= link_to '編集' , edit_tori_path(post.id) ,class:"tweet-buttom"%>
+          <%= link_to '削除' , tori_path(post.id), method: :delete , data:{confirm:'削除しますがよろしいですか'},class:"tweet-buttom"%>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>© 2015-2019 Copyright .</p>
+  </footer>
+</div>
