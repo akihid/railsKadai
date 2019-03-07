@@ -1,0 +1,13 @@
+  <h2>以下の内容で送信する</h2>
+  <%= form_with(model:@post , local: true ,url: toris_path) do |form| %>
+  
+    <%= form.hidden_field :content %>
+    <span><%= @post.content %></span>
+ 
+    <%= form.submit  "つぶやく" %>
+  <% end %>
+  
+  <%= form_with(model:@blog , local: true , url: toris_path ,method: 'get') do |form| %>
+    <%= form.hidden_field :content %>
+    <%= form.submit  "戻る" ,name: 'back' %>
+  <% end %>
