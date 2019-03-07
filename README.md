@@ -1,24 +1,18 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Ruby on Railsを使ったアプリケーションであること  
+- HTML,CSSを使用して、見本程度の最低限のフロント部分（header,footer,topページ）を作成すること。  
+（JavaScriptは余裕があれば実装する程度で構わない。高度なデザインにしたい場合は次の教材を先に読み、bootstrapなどのCSSフレームワークを使用しても構わない。）  
+- tweetの投稿・投稿確認・編集・一覧表示・削除機能があること
+- 確認画面から投稿画面に戻った時、打ち込んだ内容が保持されるようにすること  
+- 1文字以上140文字以下しかつぶやけないようにすること  
+- 140文字より多い文字数、または内容が空で登録した場合エラーメッセージがでるようにすること  
+- tweetsテーブルは、本文（content）のみカラムを有すること（id,timestampはデフォルトで生成されるのでそのままで良い）  
+- Githubにソースコードを送信し、そのリポジトリのURLを提出すること  
+- Herokuにアップロードしてある状態であること
+- エラーが出ないようにすること
+- コミットメッセージが、一目見てそのコミットの意味がわかるものであること
+- 一つの機能を作成したら、一つのコミットをするようにすること（下記ヒントあり）
+- タイムゾーンの設定を日本にしておくこと（下記ヒントあり）
+- 本番環境のログレベルはinfoにしておくこと（下記ヒントあり）
+- 下記に記述してあるコーディング規約に沿った実装を行うこと
