@@ -4,10 +4,12 @@ html{
 }
 body{
   height: 100%;
+  margin: 0px;
+  padding: 0px;
 }
 
 .container{
-  width: 980px;
+  width: 100%;
   margin:0 auto;
   min-height: 100%;
   position: relative;
@@ -39,7 +41,6 @@ input[type="submit"]{
 
 .error_explanation{
   color: red;
-  
 }
 
 .error_explanation li{
